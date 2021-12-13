@@ -1,0 +1,8 @@
+tem*.py
+.py
+*.json
+*.txt
+1103/
+GetQuestions/
+__pycache__/
+web_requset/
