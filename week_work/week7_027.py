@@ -70,5 +70,3 @@ while text!="-1":
 print(maxpass,maxcounter)
 print(minpass,mincounter)
 
-
-

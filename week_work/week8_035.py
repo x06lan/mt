@@ -1,7 +1,5 @@
 # x=input()
-
 x=input()
-
 x=x.replace("[","(")
 x=x.replace("]",")")
 rx=""
@@ -18,7 +16,6 @@ for i in range(len(x)):
     else:
         if i==0:
             rx+="'"+x[i]+"'"
-
         elif last_text.isnumeric():
             rx+="*"+x[i]
         elif last_text in {"("}:
@@ -28,7 +25,7 @@ for i in range(len(x)):
         else:
             rx+="+'"+x[i]+"'"
     last_text=x[i]
-# print(rx)
 exec("a="+rx)
+def s(data):
+    for i range(len(data)
 print(a)
-# print(y)
