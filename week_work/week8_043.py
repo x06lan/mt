@@ -30,14 +30,12 @@ x=[i for i in input().split("+")]
 for i in save:
     for j in x:
         point[i]+=deal(save[i],j)
+    if point[i]==0:
+        del point[i]
 count=0
 # print(point.items())
 point=dict(sorted(point.items(), key=lambda item: item[1],reverse=True))
 
 # print(point)
-for i in point:
-    count+=1
-    if count==len(point):
-        print(i+","+str(point[i]))
-    else:
-        print(i+","+str(point[i])+" ",end="")
+d=" ".join([",".join([str(i),str(point[i])]) for i in point])
+print(d)
