@@ -2,6 +2,8 @@ def recode(text,data,number):
     out=[]
     if len(text)==number:
         return [text]
+    if len(data)==0:
+        return []
     for i in range(len(data)):
         out+=recode(text+data[i],data[i+1:len(data)],number)
     return out 
