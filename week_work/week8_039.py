@@ -1,11 +1,13 @@
-def recode(text,data,number,save):
+def recode(text,data,number):
     out=[]
     if len(text)==number:
         return [text]
+    if len(data)==0:
+        return []
     for i in range(len(data)):
-        out+=recode(text+data[i],data[i+1:len(data)],number,save)
+        out+=recode(text+data[i],data[i+1:len(data)],number)
     return out 
 x=input().split()
-y=recode("",x[0],int(x[1]),[])
+y=recode("",x[0],int(x[1]))
 y=sorted(y)
 print(" ".join(y))
