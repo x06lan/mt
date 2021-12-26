@@ -26,6 +26,4 @@ for i in range(len(x)):
             rx+="+'"+x[i]+"'"
     last_text=x[i]
 exec("a="+rx)
-def s(data):
-    for i range(len(data)
 print(a)
