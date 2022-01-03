@@ -33,9 +33,6 @@ for i in save:
     if point[i]==0:
         del point[i]
 count=0
-# print(point.items())
 point=dict(sorted(point.items(), key=lambda item: item[1],reverse=True))
-
-# print(point)
 d=" ".join([",".join([str(i),str(point[i])]) for i in point])
 print(d)

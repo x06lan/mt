@@ -18,22 +18,16 @@ for i in range(x[0]):
     except:
         save[b]=[]
         save[b].append(a)
-is_find=False
 def mapfind(save,path,start,targe):
     #print(path,targe)
     out=False
-    global is_find
-    if not is_find :
-        for i in save[path[0]]:
-            if i==targe:
-                is_find=True
-                return True
-            elif i==start or i in path:
-                pass
-            else :
-                out=out or mapfind(save,[i]+path,start,targe)
-        return out 
-    else:
-        return False
+    for i in save[path[0]]:
+        if i==targe:
+            return True
+        elif i==start or i in path:
+            pass
+    for i in save[path[0]]:
+        out=out or mapfind(save,[i]+path,start,targe)
+    return out 
 print("Yes!" if mapfind(save,[x[1]],x[1],x[2]) else "No!")
 

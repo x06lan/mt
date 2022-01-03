@@ -1,0 +1,2 @@
+def dealmath():
+    pass
