@@ -7,31 +7,29 @@ for i in range(int(times)):
     if b not in save[a]:save[a].append(b)
     if a not in save[b]:save[b].append(a)
 kill=False
-def dfs(save,path,start,mid,targe):
-    ch=save[path[0]]
-    out=[]
-    tem=[]
-    for i in ch:
-        if i not in path:
-            if i==targe and mid in path :
-                global kill
-                kill=True
-                return [[i]+path]
-            else:
-                tem.append(i)
-    if kill:
-        return out
-    for i in tem:
-        out += dfs(save,[i]+path,start,mid,targe)
-    return out 
-out=dfs(save,[start],start,mid,targe)
-if len(out)==0:
+seen=[]
+# print(save)
+def wfs(save,node,path,targe):
+    while len(node)!=0:
+        tem=node.pop(0)
+        newpath=path.pop(0)+[tem]
+
+        if tem==targe :
+            return newpath
+        for i in save[tem]:
+            if i not in newpath:
+                node.append(i)
+                path.append(newpath)
+    return []
+out=wfs(save,[start],[[]],mid)
+out1=wfs(save,[mid],[[]],targe)
+# print(out)
+# print(out1)
+if len(out)==0 or len(out1)==0:
     print("No way!")
 else:
-    sm=out[0]
-    for i in out:
-        if len(i)<len(sm):
-            sm=i
-    sm.reverse()
+    out1.pop(0)
+    sm=out+out1
+    # sm.reverse()
     print(len(sm)-1)
     print("-".join([str(i)for i in sm ]))
