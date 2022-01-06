@@ -1,7 +1,7 @@
 def edf(command,content):
     c=command
     ct=c[0]
-    
+    #print(ct)
     if "ADD_W_AFTER" in ct:
         i=int(c[1])-1
         n=int(c[2])-1
@@ -16,13 +16,17 @@ def edf(command,content):
         pass
     elif "ADD_S_AFTER"in ct:
         i=int(c[1])-1
-        w=c[2]
-        content[i].insert(1,w)
+        del c[0]
+        del c[0]
+        for k in c:
+            content[i].append(k)
         pass
     elif "ADD_S_FRONT" in ct:
         i=int(c[1])-1
-        w=c[2]
-        content[i].insert(0,w)
+        del c[0]
+        del c[0]
+        for k in c:
+            content[i].insert(0,k)
         pass
     elif "INSERT_AFTER" in ct:
         key=c[1]
@@ -40,7 +44,7 @@ def edf(command,content):
             for j in range(len(content[i])-1,-1,-1):
                 if content[i][j]==key:
                     content[i].insert(j,w)
-    elif "DEL_w" in ct:
+    elif "DEL_W" in ct:
         i=int(c[1])-1
         j=int(c[2])-1
         del content[i][j]
