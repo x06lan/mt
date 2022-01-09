@@ -21,7 +21,7 @@ def find_s(data,side,emeny):
                 newdata[i][j]=side
                 if 3 in  find_line(newdata,side):
                     return [True,i,j]
-                elif j!=2 and i!=2:
+                elif j!=2 or i!=2:
                     init=[False,i,j]
     return init
 import copy
