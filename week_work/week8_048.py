@@ -41,15 +41,18 @@ if __name__=="__main__":
     side_change=[[human,bot],[bot,human]]
     out=[]
     have_error=False
-
+    count=0
     for i in range(len(step)):
         value=step[i]
-        tem=i%2
+        tem=count%2
+        count+=1
         #print(i,value)
         i1,j1=deal_input(value)
         if  data[i1][j1]!=0:
             print("Error")
             have_error=True
+            count+=-1
+
         else:
             data[i1][j1]=side_change[who_frist][tem]
             if 3 in find_line(data,side_change[who_frist][tem]):
