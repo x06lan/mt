@@ -1,17 +1,4 @@
 import copy
-save=[]
-roomn,meets=input().split()
-meets=int(meets)
-roomn=int(roomn)
-maxnumber_arr=[]
-for i in range(roomn):
-    maxnumber_arr.append(int(input().split()[1]))
-for i in range(meets):
-    index,number,start,end=input().split()
-    start=int(start)
-    number=int(number)
-    end=int(end)
-    save.append([start,end,number])
 def col(data,targe,maxnumber):
     if targe[2]>maxnumber:
         return True
@@ -31,8 +18,6 @@ def check(rooms,meets ):
         for i in rooms:
             for j in i:
                 total+=j[1]-j[0]
-        #if total>20:
-        #    print(rooms,total)
         return [total]
     out=[]
     newmeet=copy.deepcopy(meets)
@@ -40,15 +25,26 @@ def check(rooms,meets ):
     for i in range(len(rooms)):
         temrooms=copy.deepcopy(rooms)
         ck=not col(temrooms[i],meet,maxnumber_arr[i])
-        #print(maxnumber_arr[i],temrooms[i],meet)
-        #print(ck)
         if ck:
             temrooms[i]+=[meet]
             out+=check(temrooms,newmeet)
     out+=check(rooms,newmeet)
     return out
 
-emty_room=[[]for i in range(roomn)]
-gm=check(emty_room,save)
-#print(gm)
-print(max(gm))
+if __name__=="__main__":
+    save=[]
+    roomn,meets=input().split()
+    meets=int(meets)
+    roomn=int(roomn)
+    maxnumber_arr=[]
+    for i in range(roomn):
+        maxnumber_arr.append(int(input().split()[1]))
+    for i in range(meets):
+        index,number,start,end=input().split()
+        start=int(start)
+        number=int(number)
+        end=int(end)
+        save.append([start,end,number])
+    emty_room=[[]for i in range(roomn)]
+    gm=check(emty_room,save)
+    print(max(gm))
