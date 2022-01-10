@@ -12,6 +12,17 @@ def find_line(data,side):
     tem=[data[0][2],data[1][1],data[2][0]]
     out.append(tem.count(side))
     return out
+def find_s(data,side,emeny):
+    init=[]
+    for i in range(len(data)):
+        for j in range(len(data[i])):
+            if data[i][j]!= emeny and data[i][j]!= side:
+                newdata=copy.deepcopy(data)
+                newdata[i][j]=side
+                if 3 in  find_line(newdata,side):
+                    return [True,i,j]
+                elif j!=2 or i!=2:
+                    init=[False,i,j]
     return init
 def print_table(data):
     print("\n".join([" ".join([str(j) for j in i]) for i in data]))
