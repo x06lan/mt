@@ -1,6 +1,6 @@
 # 郭老題目
 # 1
-:::spoiler
+```
 某一學生修國文Chinese、計算機概論CS、計算機程式設計PD三科，使用者輸入名字（一個string）、學號（int）、三科成績(int)。
 (1) 計算學生總成績、平均。
 (2) 印出名字、學號、總成績、平均。
@@ -18,11 +18,10 @@ Name:Tom
 ID:905067
 Average:100
 Total:300
+```
 
-
-:::
-# 2
-:::spoiler
+# 2 一元二次方程式
+```
 一元二次方程式，ax^2 + bx + c = 0，輸入a, b, c, 求 方程式的兩個實根。
 
 ---------------
@@ -50,9 +49,12 @@ Input
 Output
 1.0
 1.0
-:::
-# 3
-:::spoiler
+```
+
+
+# 3 Sum,Difference,Product,Quotient
+```
+
 分別輸入 num1 num2 求出兩數的 Sum,Difference,Product,Quotient。
 
 結果須輸出到小數點第二位
@@ -69,10 +71,10 @@ Difference:23.00
 Sum:27.00
 Quotient:12.50
 Product:50.00
+```
 
-:::
-# 4
-:::spoiler
+# 4 BMI
+```
 輸入身高(公尺) 體重(公斤)(皆使用小數)
 
 BMI = 體重(公斤) / (身高*身高)(公尺)
@@ -86,10 +88,9 @@ print("%.1f" %x1);
 
 輸出:
 20.3
-:::
+```
 # 5
-::: spoiler
-
+```
 輸入一篇英文文章 ，文章中單字與單字之間以一個空白間隔。另外輸入兩個單字(word) P、Q。
 P為文章中所出現的單字，Q為取代或加入的單字
 (1) 在文章中把 P 字串以 Q 字串取代，並輸出。
@@ -115,10 +116,9 @@ Sample Output
 
 This was a book That was a cook
 This a book That a cook
-
-:::
+```
 # 6
-:::spoiler
+```
 1. 輸入兩個英文句子 A, B，兩個英文單字 x, y
 將兩個英文句子A, B 串聯成 句子C
 2. 將 句子C 其中的 單字x 取代成 單字y，變成 句子D
@@ -134,10 +134,10 @@ was
 Output：
 57
 ThwcatThwcatThwcat
+```
 
-:::
 # 7
-:::spoiler
+```
 
 007.
 輸入為一個英文句子以及一個單字，
@@ -159,11 +159,10 @@ Sample Output:
 43
 ['Those ', ' turn back never reach the summit.']
 
+```
 
-:::
 # 8
-:::spoiler
-008..
+```
 請輸入為一個人的全名加上一組生日，
 將以上資訊依下列格式輸出，
 {FirstName} is born at year {yyyy} month {mm} day {dd} in {LastName} family.
@@ -189,10 +188,8 @@ kobe Bryant
 Sample Output
 kobe is born at year 1978 month 08 day 23 in Bryant family.
 
-
-:::
+```
 # 9
-:::spoiler
 009.
 蘋果、奇異果、鳳梨，三種水果價格及折扣表如下，且老闆為了回饋社會，決定再加碼，購買總顆數(三種水果加起來)達30顆，總金額再打8.7折。
 今一顧客欲購買，蘋果:ｘ顆、 奇異果:ｙ顆、鳳梨:ｚ顆（x、y、z 為使用者輸入），
@@ -216,9 +213,7 @@ Sample Output：
 1218
 
 
-:::
-# 10
-:::spoiler
+# 10 撲克牌
 010.
 撲克牌
 A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K
@@ -252,9 +247,7 @@ Sample Output：
 6
 Tie
 
-:::
-# 11
-:::spoiler
+# 11 課程是否衝堂
 011.
 檢查三門課程是否衝堂，
 依序輸入課程編號(數字)、
@@ -295,9 +288,7 @@ Sample Input：
 13
 Sample Output：
 1001 and 1003 conflict on 13
-:::
-# 12
-::: spoiler
+# 12 電話費用
 012..
 輸入每月網內、網外、市話、通話時間(sec)及網內、網外 簡訊則數，求最佳資費。
 費率如下表：
@@ -323,9 +314,7 @@ Sample Output：
 Type 183
 
 
-:::
 # 13 
-:::spoiler
 013:
 
 輸入m, n 兩個整數，請計算m ~ n 之間等差為2的數列總和、等差為3的乘積，計算方式如下:
@@ -344,9 +333,7 @@ Sample Output
 80
 
 
-:::
 # 14
-:::spoiler
 014
 輸入一字串，
 1. 印出該字串中的小寫字母 (注意:若沒有字串中沒有小寫字母則輸出'No lowercase letters')
@@ -361,9 +348,7 @@ haveapenhaveanapple
 30
 2
 
-:::
 # 15
-:::spoiler
 015
 輸入 N ，之後輸入 N 個整數， 例如N=5，5個整數 11, 45, 8, 13, 22。
 輸出其中第二大的數
@@ -378,9 +363,7 @@ Sample Input
 Sample Output
 2
 3
-:::
-# 16
-:::spoiler
+# 16 BMI
 
 設計計算BMI值的Python function
 BMI值計算公式: BMI = 體重(公斤) / 身高^2(公尺^2)，例如：一個52公斤的人，身高是155公分，則BMI為 : 52(公斤)/1.55^2 ( 公尺^2 )= 21.6。
@@ -398,9 +381,7 @@ Jeff
 
 Sample Output
 Hi Jeff, Your BMI: 21.644121.
-:::
 # 17
-:::spoiler
 ```
 請使用 while loop或for loop
 第一個輸入意義為選擇三種圖形:
@@ -446,9 +427,7 @@ input
 ***
 .*
 ```
-:::
-# 18
-:::spoiler
+# 18 直角三角形 正三角形 倒三角形
 ```
 *將每個功能的Code寫成2個function，每一個function使用一層迴圈*
 *亦即一個 function 不要有兩個迴圈/巢狀迴圈*
@@ -491,9 +470,7 @@ output
 _121_
 __1__
 ```
-:::
 # 19
-:::spoiler
 ```
 n=1
 #1
@@ -531,9 +508,7 @@ output
 ######21
 #######1
 ```
-:::
-# 20
-:::spoiler
+# 20 是否為質數
 ```
 範例輸入說明:
 請輸入一個小於等於200的正整數，
@@ -554,9 +529,7 @@ Sample Input:
 Sample Output:
 6 is not prime number
 ```
-:::
 # 21
-:::spoiler
 
 
 迴圈偶數連加，輸入兩整數a、b，且a 例如輸入 a=1、b=100，則輸出結果為 2550(2+4+6+8+ ... +100 =2550)
@@ -566,11 +539,9 @@ simple input:
 
 simple output:
 2550
-:::
 
 # 22
-:::spoiler
-
+```
 階乘計算，例如5的階乘計為5!，其值為120，最大不超過15!。
 例如 5!=5*4*3*2*1
 
@@ -579,9 +550,8 @@ simple input:
 
 simple output:
 120
-:::
-# 23
-:::spoiler
+```
+# 23 撲克牌
 
 
 撲克牌
@@ -646,9 +616,7 @@ N
 Sample Output：
 10.5 vs. 10.5
 It's a tie
-:::
-# 24
-:::spoiler
+# 24 階梯數字
 
 階梯數字：數字字串從高位數往低位數看過去，每一位數字只會相等或變大，例如：9、234、777、11222233等數字都有這性質，稱階梯數字(0不是階梯數字)。
 
@@ -683,11 +651,8 @@ Sample Output5：
 124403619
 
 註：執行時間過長會導致測試失敗
-:::
-# 25
-025
-:::spoiler
-
+# 25 五張的撲克牌
+```
 
 輸入一組五張的撲克牌，判斷並輸出牌型
 ===================
@@ -739,10 +704,9 @@ KC 4S 9H 4H 4C
 
 Sample output 4：
 3
-:::
-# 26
-:::spoiler
-
+```
+# 26 設計十點半的遊戲賭盤
+```
 026
 
 設計十點半的遊戲賭盤
@@ -877,11 +841,10 @@ Player1 -2
 Player2 -3
 Player3 -4
 Bank +9
-:::
-# 27
-:::spoiler
+```
 
-027
+# 27設計密碼的分數計算
+```
 設計密碼的分數計算function
 ===================
 密碼的分數計算規則如下：
@@ -910,10 +873,9 @@ PEKOPEKO
 Sample output 1：
 An@Apple!A*Day=Keeps^The#Doctor_Away 72
 PEKOPEKO 16
-:::
-# 28
-:::spoiler
-
+```
+# 28 今有物，不知其數，三三數之賸二，五五數之賸三，七七數之賸二。問物幾何？
+```
 028
 《孫子算經》裡有個「物不知其數」的問題：「今有物，不知其數，三三數之賸二，五五數之賸三，七七數之賸二。問物幾何？」。
 幫你們翻譯：眼前有一堆物品，不知有多少個。每次取3個，最後剩下2個；每次取5個，最後剩下3個；每次取7個，最後剩下2個。問這堆物品到底有多少個？
@@ -942,10 +904,10 @@ Sample Input 3：
 
 Sample Output 3：
 566335
-:::
+```
 
-# 29
-:::spoiler
+# 29 數字排序
+```
 
 029數字排序
 
@@ -969,10 +931,9 @@ Sample Input 3：
 
 Sample Output 3：
 [888, 666, 444, 222]
-:::
-# 30
-:::spoiler
-
+```
+# 30 單字的前後排序
+```
 030
 給定一行英文字串，以空格區隔出數個單字，
 而後輸入一行數字字串，
@@ -1000,12 +961,9 @@ qrqe qwer wrqe eqrw qqrf
 
 Sample Output 2：
 eqrwwrqeqrqeqqrfqwer
-:::
-# 31
-:::spoiler
-
-031 數位電路模擬
-
+```
+# 31 數位電路模擬
+```
 數位IC輸入m 是二進位 8 位元，輸出是二進位 4 位元。
 輸入範圍從 00000000 到 11111111 (十進位 0~255)。
 輸出範圍從 0000 到 1111 (十進位 0~15)
@@ -1080,10 +1038,9 @@ Sample Output 2：
 0111
 0101
 0111
-:::
-# 32
-:::spoiler
-
+```
+# 32 費氏數列
+```
 032
 費氏數列 Fibonacci number
 
@@ -1120,10 +1077,9 @@ Sample Output:
 5
 12586269025
 55
-:::
+```
 
-# 33
-:::spoiler
+# 33 最大公因數 GCD
 
 033
 計算最大公因數 GCD
@@ -1149,19 +1105,20 @@ Sample Output
 1
 1
 5
-:::
 
 # 34
-:::spoiler
+![](https://i.imgur.com/Q8FbZZB.png)
 
+```
 034
 假設一個數列K(n) 的前兩項是
 K(0) = 0 ; K(1) = 1，
 而之後的每一項為K(n)=2*K(n-1)+3*K(n-2)，n>=2
-https://imgur.com/Q8FbZZB (如網址圖片所示)
+
 使用【遞迴函式】計算K(n)，
 輸入說明:
 由使用者輸入一個正整數n，n>=2
+
 若輸入錯誤請顯示Error
 輸出說明:
 印出該數列的第n項。
@@ -1197,10 +1154,9 @@ Input:
 1.3
 Output:
 Error
-:::
+```
 
-# 35
-:::spoiler
+# 35 字串做乘法
 ```
 035
 請對字串做乘法運算
@@ -1241,10 +1197,8 @@ Input5:
 Output5:
 deffeffdeffeff
 ```
-:::
 
-# 36
-:::spoiler
+# 36  n 條直線最多可將平面劃分成幾個區域
 
 ```
 036.
@@ -1280,9 +1234,7 @@ Output:
 ------------------------
 16
 ```
-:::
-# 37
-:::spoiler
+# 37 區間
 ```
 037.
 請先輸入一個數n，
@@ -1355,8 +1307,7 @@ sample output4:
 1,5
 8,10
 ```
-# 38
-:::spoiler
+# 38 回文子字串
 
 ```
 38.
@@ -1393,10 +1344,8 @@ Sample input5:
 Sample output5:
 0#020#0XX0#1#2#202#20XX02#22#X#XX#a#aha#h#hah#hahah
 ```
-:::
 
-# 39
-:::spoiler
+# 39 排列組合
 ```
 39.
 輸入說明：
@@ -1435,10 +1384,8 @@ DinoSaur 5
 Sample output 5:
 DSaur DiSar DiSau DiSur Diaur DinSa DinSr DinSu Dinar Dinau DinoS Dinoa Dinor Dinou Dinur DioSa DioSr DioSu Dioar Dioau Diour DnSar DnSau DnSur Dnaur DnoSa DnoSr DnoSu Dnoar Dnoau Dnour DoSar DoSau DoSur Doaur iSaur inSar inSau inSur inaur inoSa inoSr inoSu inoar inoau inour ioSar ioSau ioSur ioaur nSaur noSar noSau noSur noaur oSaur
 ```
-:::
 
 # 40
-:::spoiler
 ```
 40.
 (1)首先，輸入一串不超過50字元的字串(不得有空格)及一正整數K，兩者以一個空格為間隔
@@ -1479,10 +1426,8 @@ Sample input 5:
 Sample output 5:
 Hh/HHH/hHh
 ```
-:::
 
-# 41
-:::spoiler
+# 41 新的朋友
 ```
 某社群平台上，A可以加B為朋友，若B同意，則A，B變成朋友。
 A可以找尋B的朋友，去認識第二層新的朋友，透過這種方法，可以認識一層又一層新的朋友。
@@ -1561,10 +1506,8 @@ Sample Input:
 Sample Output:
 Yes!
 ```
-:::
 
-# 42
-:::spoiler
+# 42 簡單五則運算
 ```
 042. 簡單五則運算
 
@@ -1604,10 +1547,8 @@ Sample Output:
 11
 
 ```
-:::
 
-# 43
-:::spoiler
+# 43 理想的大學
 ```
 043. 理想的大學
 
@@ -1708,9 +1649,7 @@ Sample Output:
 
 NTU,4 NTUT,3 NCTU,3 Providence,2 NCHU,2 NTPU,2 NTOU,2 NCKU,1 NCU,1
 ```
-:::
-# 44
-:::spoiler
+# 44 對發票
 ```
 044.對發票
 阿翔是一個很喜歡對發票的男孩，所以他存了很多張發票準備對獎，
@@ -1787,11 +1726,9 @@ Sample Input2
 Sample Output
 200
 ```
-:::
 
 
 # 45. 外星城市
-:::spoiler
 ```
 小白要到納美克星的城市旅遊，某些城市之間有傳輸通道可以走。小白聽說B城市特別好玩，因此到目的地之前一定要經過B城市，但小白又不想走太多路，因此需要同學幫小白找出一條能從A城市到C城市，並且中途一定會經過B城市的最短路徑。
 
@@ -2156,9 +2093,7 @@ Sample output6:
 3
 1-4-45-85
 ```
-:::
-# 46
-:::spoiler
+# 46 會議安排
 ```
 046 會議安排
 
@@ -2313,9 +2248,7 @@ Sample input 11
 Sample output 11
 22
 ```
-:::
-# 47
-:::spoiler
+# 47 文字編輯器
 ```
 047. 文字編輯器
 輸入說明
@@ -2426,9 +2359,7 @@ ADD_W_AFTER 1 5 fat
 Sample output 5
 Do you wanna build a fat snow man
 ```
-:::
-# 48
-:::spoiler
+# 48 圈叉遊戲
 
 ```
 048. 圈叉遊戲
@@ -2679,10 +2610,8 @@ OK
 Undecided
 1
 ```
-:::
 
 # 49 文字編輯器 II
-:::spoiler
 ```
 輸入說明
 第一行輸入一個整數M, N， M是原始文章行數，N是編輯指令數。
@@ -2860,9 +2789,7 @@ you your your
 i my me he his him
 she her her
 ```
-:::
-# 50
-:::spoiler
+# 50 會議安排 II
 ```
 050 會議安排
 
@@ -3037,4 +2964,3 @@ Sample Input 8
 Sample Output 8
 22
 ```
-:::
