@@ -14,37 +14,29 @@ def col(data,targe,maxnumber):
     return False
 def check(rooms,meets ):
     if len(meets)==0:
-        total=0
-        for i in rooms:
-            for j in i:
-                total+=j[1]-j[0]
+        total=sum([ j[1]-j[0] for i in rooms for j in i])
         return [total]
     out=[]
     newmeet=copy.deepcopy(meets)
     meet=newmeet.pop(0)
     for i in range(len(rooms)):
-        temrooms=copy.deepcopy(rooms)
-        ck=not col(temrooms[i],meet,maxnumber_arr[i])
+        new_rooms=copy.deepcopy(rooms)
+        ck=not col(new_rooms[i],meet,maxnumber_arr[i])
         if ck:
-            temrooms[i]+=[meet]
-            out+=check(temrooms,newmeet)
+            new_rooms[i]+=[meet]
+            out+=check(new_rooms,newmeet)
     out+=check(rooms,newmeet)
     return out
 
 if __name__=="__main__":
-    save=[]
-    roomn,meets=input().split()
-    meets=int(meets)
-    roomn=int(roomn)
+    save_meets=[]
     maxnumber_arr=[]
+    roomn,meetn=map(int,input().split())
     for i in range(roomn):
         maxnumber_arr.append(int(input().split()[1]))
-    for i in range(meets):
-        index,number,start,end=input().split()
-        start=int(start)
-        number=int(number)
-        end=int(end)
-        save.append([start,end,number])
+    for i in range(meetn):
+        index,number,start,end=map(int,input().split())
+        save_meets.append([start,end,number])
     emty_room=[[]for i in range(roomn)]
-    gm=check(emty_room,save)
+    gm=check(emty_room,save_meets)
     print(max(gm))
