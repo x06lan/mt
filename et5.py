@@ -1,3 +1,4 @@
+import copy
 def col(rooms,meet,max_number):
     if meet[2]>max_number:
         return True
@@ -9,7 +10,6 @@ def col(rooms,meet,max_number):
         else:
             return True
     return False
-import copy
 def check(rooms,meets,max_n):
     if len(meets)==0:
         return  [sum([j[1]-j[0]for i in rooms for j in i])]
