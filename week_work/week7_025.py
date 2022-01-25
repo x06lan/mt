@@ -1,5 +1,3 @@
-
-
 def get_key():
     key={
     "A":1,
@@ -23,13 +21,12 @@ def get_key():
         "C"
     ]
     return key,flower
-    
 def same_card(cards):
     x=set(cards)
     if len(cards)!=len(x):
         return False
-    else:   
-        return True 
+    else:
+        return True
 
 def same_number(cards):
     key ,flower=get_key()
@@ -48,7 +45,7 @@ def same_flower(cards):
     if cards_number.count(number[0])==len(number):
         return True
     else :
-        return False 
+        return False
 def flow(cards):
     # print(cards)
     key ,flower=get_key()
@@ -63,7 +60,7 @@ def flow(cards):
             return False
         else:
             tem=x
-        counter+=1        
+        counter+=1
     return True
 
 

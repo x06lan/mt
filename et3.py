@@ -18,5 +18,10 @@ if __name__=="__main__":
         if a not in pipe[b] :pipe[b].append(a)
         if b not in pipe[a] :pipe[a].append(b)
     out=dfs(pipe,[start],mid,end)
-    print(out)
+    ans=out[0]
+    for i in out:
+        if len(ans)>len(i):
+            i.reverse()
+            ans=i
+    print("-".join(map(str,ans)))
 

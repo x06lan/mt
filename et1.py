@@ -6,7 +6,6 @@ def deal_req(req,data):
         for i in req:
             fit_req=True
             for j in i:
-
                 if j[0]=="!":
                     if j[1:]  in  school:
                         fit_req=False
@@ -28,7 +27,4 @@ if __name__=="__main__":
     req=input()
     ans=deal_req(req,data)
     print(" ".join([",".join([i,str(ans[i])])for i in ans]))
-
-
-
 
