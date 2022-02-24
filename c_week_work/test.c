@@ -43,13 +43,12 @@ list *create_list(int len,int arr[]){
 
 void print_list(list *init_list){
     node *last_node=init_list->init_node;
-    int i=0;
     while (last_node!=NULL)
     {
         printf("%d\n",last_node->value);
         last_node=last_node->next;
     }
-        printf("\n");
+    printf("\n");
 
 }
 
@@ -74,14 +73,21 @@ void set_value(list *link_list,int index,int value){
         head->value=value;
     }
 }
+void push(list *link_list,int value){
+	node *next_node=link_list->init_node;
+	while(next_node->next!=NULL){
+		next_node=next_node->next;
+	}
+	next_node->next=create_node(link_list->len,value);
+}
 // void push(list *link_list,int )
 
 int main() {
     int tem[4]={1,3,5,7};
     list *new_list=create_list(4,tem);
     print_list(new_list);
-    int test=get_value(new_list,0);
-    set_value(new_list,0,0);
+    //int test=get_value(new_list,0);
+	push(new_list,5);
     print_list(new_list);
 
     return 0;
