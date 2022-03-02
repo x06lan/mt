@@ -13,5 +13,5 @@ int tt(int x,int y){
 int main() {
 	int g=0;
 	g=tt(10,13);
-	printf("%d",g);
+	printf("%d\n",g);
 }
