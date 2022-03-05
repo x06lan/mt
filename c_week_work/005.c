@@ -19,7 +19,7 @@ int main() {
 			int tem=0;
 			tem=floor(time/10);
 			if (class[tem][time%10]!=4){
-				printf("%d\n",class[tem][time%10]);
+				// printf("%d\n",class[tem][time%10]);
 				printf("%d and %d conflict on %d\n",name[class[tem][time%10]],name[i],time);
 
 			}
