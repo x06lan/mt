@@ -1,8 +1,8 @@
 .data
-    input:      .space  81
+    input:      .space  80
     input_size: .word   80
     prompt:     .asciiz "Enter Text: "
-    output:     .asciiz "Fuck "
+    output:     .asciiz "echo: "
 
 .text
     la $a0, prompt
