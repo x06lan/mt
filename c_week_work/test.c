@@ -1,17 +1,14 @@
 #include <stdio.h>
 #include <math.h>
 
-int tt(int x,int y){
-	int i=0,toto=0;
-	for(i=x;i<=y;i++){
-		if(i%2==1){
-			toto+=i;
-		}
-	}
-    return toto;
-}
 int main() {
-	int g=0;
-	g=tt(10,13);
-	printf("%d\n",g);
+	int i=4,j=6,*p=&j,*q=&i,*r;
+	for(i=0;i<5;i++)
+		printf("123\n");
+		printf("abc\n");
+	printf("%d\n",*q);
+	printf("%d\n",*p);
+	printf("%d\n",i);
+	
+
 }

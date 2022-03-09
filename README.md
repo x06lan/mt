@@ -1,3 +1,9 @@
 # 郭老題目
-[readme](./py_week_work)
-# c?
+[py](./py_week_work)
+[c](./c_week_work)
+# zerojudge
+[link]()
+# leetcode
+[link]()
+# mips(assembly)
+
