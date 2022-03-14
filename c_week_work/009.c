@@ -15,11 +15,8 @@ void number_gray(){
 	int out[a];
 	int b_temp[a];
 	b=int_bin(b);
-	printf("%d\n",b);
-
-	for(i=a-1;i>=0;i--){
+	for(i=a-1;i>=0;i--)
 		b_temp[i]=0;
-	}
 	i=0;
 	while (b>=0){
 		b_temp[i]=b%10;
@@ -27,19 +24,10 @@ void number_gray(){
 		b=floor(b/10);
 		i=i+1;
 	}
-	for(i=a-1;i>=0;i--){
-		printf("%d",b_temp[i]);
-	}
-	printf("\n");
-
 	int temp=0;
 	for(i=a-1;i>=0;i--){
 		if(floor(log(b)+1)<=i){
-			if((int)b_temp[i]^temp){
-				out[i]=1;
-			}else{
-				out[i]=0;
-			}
+			out[i]=(int)(b_temp[i]^temp);
 			temp=(int)b_temp[i];
 		}
 		else{
@@ -54,12 +42,8 @@ void number_gray(){
 }
 int main() {
 	int temp=0;
-
 	while(temp!=-1){
 		number_gray();
 		scanf("%d",&temp);
 	}
-
-
-
 }
