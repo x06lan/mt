@@ -5,8 +5,7 @@ class Solution{
 	public:
 		vector<string> res;
 		void recur(string temp,int open ,int close){
-			//printf("s=%s o=%d c=%d\n",temp,open,close);
-			if(open==0&&close){
+			if(open==0&&close==0){
 				res.push_back(temp);
 			}
 			if(open>0){
@@ -25,7 +24,7 @@ int main(){
 
 	Solution call;
 	vector<string> temp= call.deal(3);
-	printf("%s",temp);
+	printf("%s",temp[0]);
 
 	return 0;
 
