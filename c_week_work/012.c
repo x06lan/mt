@@ -18,12 +18,19 @@ void deal(int a,int b,int aa,int bb,char sign[]){
 		return;
 	}
 	int out[3]={0};
+	// printf("%d %d\n",aa,bb);
+
 	if(strcmp(sign,"/")==0){
 		int temp=aa;
 		aa=bb;
 		bb=temp;
 		sign="*";
 	}
+	// printf("%d %d\n",aa,bb);
+	a=(b>0)?a:(-a);
+	b=(b>0)?b:(-b);
+	aa=(bb>0)?aa:(-aa);
+	bb=(bb>0)?bb:(-bb);
 	if(strcmp(sign,"*")==0){
 		out[0]=a*aa;
 		out[1]=b*bb;
@@ -38,13 +45,15 @@ void deal(int a,int b,int aa,int bb,char sign[]){
 		out[0]=a-aa;
 		out[1]=b*bb;
 	}
-	if (abs(out[0])/out[1]>=1){
+	if (abs(out[0])/abs(out[1])>=1){
 		out[2]=out[0]/out[1];
 		out[0]=out[0]%out[1];
 		int gcd=command(abs(out[0]),out[1]);
 		printf("%d(%d/%d)\n",out[2],abs(out[0])/gcd,out[1]/gcd);
 	}else if(out[0]==0){
 		printf("0\n");
+	}else if(out[1]==1){
+		printf("%d\n",out[0]);
 	}
 	else{
 		int gcd=command(abs(out[0]),out[1]);
