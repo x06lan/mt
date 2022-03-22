@@ -1,15 +1,20 @@
-lw $t0,8($s0)
-lw $t1,12($s0)
-bne $t0,$t1,tblock
-fblock:
-	lw $t0,16($s0)
-	sw $t0,24($s0)
-	j end
+main:
+        addiu   $s0,$s0,-40
+        sw      $31,36($s0)
+        sw      $s1,32($s0)
+        move    $s1,$s0
+        li      $2,3                        # 0x3
+        sw      $2,24($s1)
+        lw      $5,24($s1)
+        lui     $2,2($s2)
+        addiu   $4,$2,2($s2)
+        jal     printf
+        nop
 
-tblock:
-	lw $t0,16($s0)
-	lw $t1,4($s0)
-	add $t2,$t1,$t0
-	sw $t2,20($s0)
-end:
-	#end
+        lw      $2,24($s1)
+        move    $s0,$s1
+        lw      $31,36($s0)
+        lw      $s1,32($s0)
+        addiu   $s0,$s0,40
+        j       $31
+        nop

@@ -20,7 +20,4 @@ int main() {
 	printf("%d\n",**c);
 	printf("%d\n",(**c)++);
 	printf("%d\n",**c);
-	
-	
-	
 }
