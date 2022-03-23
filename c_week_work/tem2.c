@@ -1,16 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
-int* f(){
+int  f(int d[],int size,int key){
+	int i=size/2;
+	int start=0,end=size-1;
+	while(d[i]!=key && i<size){
+		
+		if(d[i]<key){
+			i=(i+end)/2;
+			start=i;
+		}
+		else{
+			i=(i+start)/2;
+			end=i;
+		}
+	}
 
-	int *tem=malloc(sizeof(int)*4);
-	int i=0;
-	for(i=0;i<4;i++)
-		*(tem+i)=i;
-	return tem;
+	if(d[i]!= key){
+		return -1;
+	}
+	return i;
 }
 int main() {
-	int* e;
-	e=f();
+	int e[]={1,2,3};
+
+	f(e,3,1);
 
 	printf("%d\n",*(e+1));
+	
 }

@@ -52,6 +52,16 @@ void print_list(list *init_list){
 
 }
 
+void sort(list *link_list){
+	node *head=link_list->init_node;
+	int i,j;
+	int len=link_list->len;
+	for(i=0;i<len-1;i++){
+		for(j=0;j<i;j++){
+		}
+	}
+	
+}
 int get_value(list *link_list,int index){
     node *head=link_list->init_node;
     while (head->index<index )
