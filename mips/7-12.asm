@@ -1,9 +1,12 @@
 .data
     input_text:     .asciiz "Enter int: "
-    output_odd:     .asciiz "The number is odd"
-    output_even:     .asciiz "The number is even"
+	out_q:			.asciiz " quarters,"
+	out_d:			.asciiz " dime, "
+	out_n:			.asciiz " nickel, and "
+	out_p:			.asciiz " penny"
 
 .text
+
 li $v0, 4
 la $a0,input_text 
 syscall
@@ -12,22 +15,48 @@ li $v0,5 #set value
 syscall
 move $s0, $v0
 
-srl $s1,$s0,1
-sll $s1,$s1,1
+#q
+li $t0, 25
+div $s0,$t0
+mfhi $s0
 
-beq $s0,$s1,exiteven
+li $v0, 1
+mflo $a0
+syscall
+li $v0, 4
+la $a0,out_q
+syscall
 
+#d
+li $t0, 10
+div $s0,$t0
+mfhi $s0
 
-exitodd:
-	li $v0, 4
-	la $a0, output_odd
-	syscall
-	j end
+li $v0, 1
+mflo $a0
+syscall
+li $v0, 4
+la $a0,out_d
+syscall
+#d
+li $t0, 5
+div $s0,$t0
+mfhi $s0
 
+li $v0, 1
+mflo $a0
+syscall
+li $v0, 4
+la $a0,out_n
+syscall
+#p
+li $t0, 1
+div $s0,$t0
+mfhi $s0
 
-exiteven:
-	li $v0, 4
-	la $a0, output_even
-	syscall
-end:
-
+li $v0, 1
+mflo $a0
+syscall
+li $v0, 4
+la $a0,out_p
+syscall
