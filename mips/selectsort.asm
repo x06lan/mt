@@ -1,7 +1,7 @@
 .data
 	msg1: .asciiz "Give a number: "
 	list: .space 400
-	list1: .word  1,5,7,3,5,7,0,2
+	list1: .word  1,6,7,6,9,7,0,2
 
 .text
 .globl main
