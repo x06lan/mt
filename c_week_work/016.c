@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-int big=100;
+#define big 100
 //lanx
 void str_int(char a[],int* out){
 	int i=strlen(a)-1;
