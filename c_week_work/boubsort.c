@@ -1,20 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
-void insert_sort(int*a,int n){
+void boube_sort(int*a,int n){
 	int i,j;
 	int count=0;
-	for(i=1;i<n;i++){
-		for(j=i;j>0;j--){
-			int tema=*(a+j);
-			int temb=*(a+j-1);
-			if(tema<temb){
-				count+=1;
-				*(a+j)=temb;
-				*(a+j-1)=tema;
-			}
+	for(i=0;i<n-1;i++){
+		for(j=i+1;j<n;j++){
 		}
 	}
-	printf("%d\n",count);
+	printf("%d\n\n",count);
 }
 
 int main(){
@@ -28,11 +21,10 @@ int main(){
 	for(i=0;i<n;i++){
 		printf("*%d\n",*(a+i));
 	}
-	insert_sort(a,n);
+	boube_sort(a,n);
 	for(i=0;i<n;i++){
 		printf("%d\n",*(a+i));
 	}
-
 
 	return 1;
 }
