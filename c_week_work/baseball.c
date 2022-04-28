@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int upbase(int a[4],int up,int save[3]){
+int upbase(int a[4],int up,int save[3],int targe,int round){
 	int i=0;
 	int sum=0;
 	for(i=0;i<up;i++){
 		if(a[3]!=0){
 			sum+=1;
-			if(a[3]<=3){
+			if(a[3]<=3,targe>round){
 				save[a[3]-1]+=1;
 			}
 		}
@@ -57,28 +57,20 @@ int main(){
 				for(j=0;j<4;j++)base[j]=0;
 			}
 		}else{
-			printf("&%d ",value);
-			if((i%9)<3 &&value!=4){
-				printf("&%d %d\n",i%9,value);
+			if((i%9)<3 && round<targe){
 				an[i%9]=an[i%9]+1;
 			}
 			base[0]=(i%9)+1;
-			sum+=upbase(base,value,first3);
+			sum+=upbase(base,value,first3,targe,round);
 		}
 		point[round]=sum;
 		i+=1;
 		value=data[i%9][i/9];
 	}
-	printf("%d\n",point[targe]);
+	printf("%d\n",point[targe-1]);
 	for(i=0;i<3;i++){
 		printf("%d %d %d\n",i+1,an[i],first3[i]);
 	}
 	
 	return 0;
-	for(i=0;i<9;i++){
-		for(j=0;j<10;j++){
-			printf("%d ",data[i][j]);
-		}
-		printf("\n");
-	}
 }
