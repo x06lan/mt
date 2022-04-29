@@ -31,11 +31,8 @@ int main() {
 	int tem=0;
 	int out=0;
 	sp(con1,str,del,&len);
-
 	int data[n][len];
 	memset(data,0,sizeof(data));
-
-	
 	gets(str1);
 	for(i=0;i<n;i++){
 		if(i==-1)continue;
