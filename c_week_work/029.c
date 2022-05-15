@@ -60,7 +60,7 @@ int main(){
 	scanf("%d",&m);
 	scanf("%d",&n);
 	machine w[m];
-	work task[100];
+	work task[n];
 	for(i=0;i<n;i++){task[i].last=0;}
 	for(i=0;i<n;i++){
 		int nx;
