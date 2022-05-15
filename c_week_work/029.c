@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define size 111
+#define size 200
 typedef struct work{
 	int number;
 	int time[size];
@@ -20,8 +20,6 @@ int max(int a,int b){
 int dowork(machine w[],work task[],int m, int n, int time){
 	int i,j,k;
 	int t_id=-1;
-	//for(i=0;i<m;i++)printf("%d,",w[i].time);
-	//printf("\n");
 	for(i=0;i<n;i++){
 		int now=task[i].now;
 		int w_id=task[i].mc[task[i].now];
@@ -41,8 +39,6 @@ int dowork(machine w[],work task[],int m, int n, int time){
 		}
 	}
 	if(t_id==-1){
-		//for(i=0;i<n;i++)printf("%d,",task[i].last);
-		//printf("\n");
 		int out=0;
 		for(i=0;i<n;i++){
 			out+=task[i].last;
@@ -64,7 +60,8 @@ int main(){
 	scanf("%d",&m);
 	scanf("%d",&n);
 	machine w[m];
-	work task[n];
+	work task[100];
+	for(i=0;i<n;i++){task[i].last=0;}
 	for(i=0;i<n;i++){
 		int nx;
 		scanf("%d",&nx);
