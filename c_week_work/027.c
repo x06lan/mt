@@ -17,8 +17,6 @@ void init(work *a){
 	a->req=malloc(sizeof(int)*size);
 	memset(a->req,-1,sizeof(a->req));
 	a->bereq_n=0;
-	//a->bereq=malloc(sizeof(int)*size);
-	//memset(a->bereq,-1,sizeof(a->req));
 }
 int recode(work d[size],work a){
 	int max=0;
@@ -26,7 +24,6 @@ int recode(work d[size],work a){
 	if(a.req_n!=0){
 		for(i=0;i<a.req_n;i++){
 			int id=*(a.req+i)-1;
-			//printf("@%d %d %d\n",a.id,id,a.time);
 			int take_time=recode(d,d[id]);
 			if(take_time >max){
 				max=take_time;
@@ -72,7 +69,6 @@ int main(){
 				int id;
 				scanf("%d",&id);
 				*((data[j].req)+k)=id;
-				//*(data[id].bereq+data[id].bereq_n)=j;
 				data[id].bereq_n+=1;
 			}
 		}
