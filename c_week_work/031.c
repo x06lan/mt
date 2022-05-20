@@ -91,6 +91,6 @@ int main(){
 	gate[5].b=&gate[4];
 
 	get_v(&(gate[5]));
-	printf("%d %d %d",gate[1].out,gate[3].out,gate[5].out);
+	printf("%d,%d,%d",gate[1].out,gate[3].out,gate[5].out);
 	return 0;
 } 
