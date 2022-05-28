@@ -1,45 +1,47 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define swap(x,y){int t;t=x;x=y;y=t;}
-int  f(int d[],int size,int key){
-	int i=size/2;
-	int start=0,end=size-1;
-	while(d[i]!=key && i<size){
-		
-		if(d[i]<key){
-			i=(i+end)/2;
-			start=i;
-		}
-		else{
-			i=(i+start)/2;
-			end=i;
-		}
-	}
-
-	if(d[i]!= key){
-		return -1;
-	}
-	return i;
-}
-void merge_sort(int *a,int len){
-	if(len==2){
-	}
-
-}
-	
+#include <string.h>
 
 int main() {
-	int e[]={1,2,3};
-	int x=1,y=0;
-
-	//f(e,3,1);
-	printf("%d %d\n",x,y);
-	swap(x,y);
-	printf("%d %d\n",x,y);
-	printf("%d %d\n",e[0],e[1]);
-	swap(e[0],e[1]);
-	printf("%d %d\n",e[0],e[1]);
-
-	//printf("%d\n",*(e+1));
+	int w,h;
+	scanf("%d %d",&w,&h);
+	int i,j,k;
+	int x,y;
+	int xl,yl;
+	int xm,ym=-1;
+	int xmi,ymi=-1;
+	char save[100][100];
+	memset(save,(int)' ',sizeof(save));
+	while(scanf("%d %d",&x,&y)!= EOF){
+		int tem=x-xl;
+		int tem1=y-yl;
+		if(xm==-1){
+			xm=x;
+			xmi=x;
+			ym=y;
+			ymi=y;
+		}
+		for(i=0;i<abs(tem);i++){
+			int nowx=x+i*tem/abs(tem);
+			int nowy=y+i*tem1/abs(tem1);
+			save[nowx][nowy]='*';
+			if(nowx>xm)xm=nowx;
+			if(nowx>xmi)xmi=nowx;
+			if(nowy>ym)ym=nowy;
+			if(nowy>ymi)ymi=nowy;
+		}
+		xl=x;
+		yl=y;
+	}
+	for(i=ymi;i<ym;i++){
+		printf("|");
+		for(j=xmi;j<xm;j++){
+			if(i==ymi || j==ym-1)printf("-");
+			printf("%c",save[i][j]!=' '?'*':' ');
+		}
+		printf("|\n");
+	}
 	
+	return 0;
+
 }
