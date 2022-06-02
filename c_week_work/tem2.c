@@ -1,47 +1,44 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
+
+double min(double a, double b){ return (a>b)?b:a;}
+double max(double a, double b){ return (a<b)?b:a;}
+double recode(double *a,double *b,int c,int n){
+	int i;
+	//a=time b=sp
+	double lim=10000000000;
+	for(i=c;i<n;i++){
+		if(a[i]-b[i]>0){
+			lim=min(lim,a[i]-b[i]);
+		}
+	}
+	return lim;
+}
 int main() {
-	int w,h;
-	scanf("%d %d",&w,&h);
-	int i,j,k;
-	int x,y;
-	int xl,yl;
-	int xm,ym=-1;
-	int xmi,ymi=-1;
-	char save[100][100];
-	memset(save,(int)' ',sizeof(save));
-	while(scanf("%d %d",&x,&y)!= EOF){
-		int tem=x-xl;
-		int tem1=y-yl;
-		if(xm==-1){
-			xm=x;
-			xmi=x;
-			ym=y;
-			ymi=y;
-		}
-		for(i=0;i<abs(tem);i++){
-			int nowx=x+i*tem/abs(tem);
-			int nowy=y+i*tem1/abs(tem1);
-			save[nowx][nowy]='*';
-			if(nowx>xm)xm=nowx;
-			if(nowx>xmi)xmi=nowx;
-			if(nowy>ym)ym=nowy;
-			if(nowy>ymi)ymi=nowy;
-		}
-		xl=x;
-		yl=y;
+	int n,i,j;
+	scanf("%d",n);
+	double time[n];
+	double maxsp[n];
+	for(i=0;i<n;i++){
+		int tem;
+		scanf("%d",&tem);
+		time[i]=(double)tem;
 	}
-	for(i=ymi;i<ym;i++){
-		printf("|");
-		for(j=xmi;j<xm;j++){
-			if(i==ymi || j==ym-1)printf("-");
-			printf("%c",save[i][j]!=' '?'*':' ');
-		}
-		printf("|\n");
+	for(i=0;i<n;i++){
+		int tem;
+		scanf("%d",&tem);
+		maxsp[i]=(double)tem;
 	}
-	
-	return 0;
-
+	double sum=0;
+	double nowsp=0;
+	for(i=0;i<n;i++){
+		double lim=1000000;
+		lim=recode(time,maxsp,i,n);
+		sum+=pow(nowsp-lim,2)/2.;
+		sum+=
+		nowsp=lim;
+	}
 }
