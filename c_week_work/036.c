@@ -58,12 +58,6 @@ int main(){
 			last=tem;
 		}
 	}
-	tem=head;
-	while(tem!=NULL){
-		printf("%d ",tem->v);
-		tem=tem->next;
-	}
-	printf("\n");
 	int input;
 	scanf("%d",&input);
 	while(input!=6){
