@@ -110,27 +110,14 @@ int p_all(node *head,int tem){
 	if(head->v!=0 )tem=head->pow;
 	if(head->next!=NULL)tem=p_all(head->next,tem);
 	if(head->v!=0 ){
-		if(tem!=head->pow){
-			printf("%c",(head->v>0)?'+':'-');
-		}
-		else {
-			if(head->v<0){
-				printf("%c",'-');
-			}
-		}
-		if(abs(head->v)!=1||head->pow==0){
-			printf("%d",abs(head->v));
-		}
-		if(head->pow>1){
-			printf("x^%d",head->pow);
-		}
-		else if(head->pow==1 ){
-			printf("x");
-		}
+		if(tem!=head->pow)printf("%c",(head->v>0)?'+':'-');
+		else if(head->v<0)printf("%c",'-');
+
+		if(abs(head->v)!=1||head->pow==0)printf("%d",abs(head->v));
+		if(head->pow>1)printf("x^%d",head->pow);
+		else if(head->pow==1 )printf("x");
 	}else{
-		if(head->pow==0 &&tem==0){
-			printf("%d",0);
-		}
+		if(head->pow==0 &&tem==0)printf("%d",0);
 	}
 	return tem;
 }
@@ -163,7 +150,6 @@ int main(){
 	}
 	list *c=copy(b);
 	list *d=copy(a);
-
 
 	add(a,c,1);
 	p_all(c->h,0);
