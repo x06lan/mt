@@ -5,41 +5,43 @@
 int* input(){
 	char s[10000]="";
 	gets(s);
-	int i=0,tem=0,level=10,sign=1;
+	int i=0,tem=0,sign=1;
 	int *out=malloc(sizeof(int)*10000); 
 	*out=0;
-	while(s[i]!=0){
+	while(1){
 		if(s[i]=='-'){
 			sign=-1;
 		}
-		else if(s[i]==' '){
+		else if(s[i]==0){
+			*out+=1;
+			*(out+*out)=sign*tem;
+			break;
+		}
+		else if(s[i]==' ' && s[i+1]!=0 ){
 			*out+=1;
 			*(out+*out)=sign*tem;
 			tem=0;
-			level=10;
 			sign=1;
 		}
-		else{
-			tem*=level;
+		else if(s[i]!=' '){
+			tem*=10;
 			tem=tem+s[i]-'0';
-			level=10;
 		}
+		
 		i++;
 	}
-	*out+=1;
-	*(out+*out)=sign*tem;
 	return out;
 }
 typedef struct node_t{
-	int level;
+	int pow;
 	int v;
 	struct node_t *next;
 }node;
 
-node *newnode(int v,int level){
+node *newnode(int v,int pow){
 	node *tem=malloc(sizeof(node));
 	tem->v=v;
-	tem->level=level;
+	tem->pow=pow;
 	tem->next=NULL;
 	return tem;
 }
@@ -54,43 +56,43 @@ list *newlist(){
 	a->l=NULL;
 	return a;
 }
-int insert(list *a,int v,int level,int arg){
+int insert_push(list *a,int v,int pow,int arg){
 	node **head=&(a->h);
 	node **last=&(a->l);
 	if(*head==NULL){
-		(*head)=newnode(v,level);
+		(*head)=newnode(v,pow);
 		*last=*head;
 		return 0;
 	}
 	else{
 		if(arg==0){
-			node *tem=newnode(v,level);
+			node *tem=newnode(v,pow);
 			tem->next=*head;
 			*head=tem;
 		}
 		else{
-			(*last)->next=newnode(v,level);
+			(*last)->next=newnode(v,pow);
 			*last=(*last)->next;
 		}
 	}
 	return 0;
 }
-node* find(list *a,int level){
+node* find(list *a,int pow){
 	node *head=a->h;
 	while(head!=NULL){
-		if(head->level==level){
+		if(head->pow==pow){
 			return head;
 		}
 		head=head->next;
 	}
-	if(head==NULL)return NULL;
+	return NULL;
 }
 list* copy(list *a){
 	list *b=newlist();
 	node *chead=a->h;
 	
 	while(chead!=NULL){
-		insert(b,chead->v,chead->level,1);
+		insert_push(b,chead->v,chead->pow,1);
 		chead=chead->next;
 	}
 	return b;
@@ -98,17 +100,17 @@ list* copy(list *a){
 void add(list *a,list*b,int sign){
 	node *ah=a->h;
 	while(ah!=NULL){
-		node *tem=find(b,ah->level);
+		node *tem=find(b,ah->pow);
 		if(tem!=NULL)tem->v+=sign*(ah->v);
-		else insert(b,sign*ah->v,ah->level,1);
+		else insert_push(b,sign*ah->v,ah->pow,1);
 		ah=ah->next;
 	}
 }
-void p_all(node *head,int *tem){
-	if(head->v!=0 )*tem=head->level;
-	if(head->next!=NULL)p_all(head->next,tem);
+int p_all(node *head,int tem){
+	if(head->v!=0 )tem=head->pow;
+	if(head->next!=NULL)tem=p_all(head->next,tem);
 	if(head->v!=0 ){
-		if(*tem!=head->level){
+		if(tem!=head->pow){
 			printf("%c",(head->v>0)?'+':'-');
 		}
 		else {
@@ -116,22 +118,21 @@ void p_all(node *head,int *tem){
 				printf("%c",'-');
 			}
 		}
-		if(abs(head->v)!=1||head->level==0){
+		if(abs(head->v)!=1||head->pow==0){
 			printf("%d",abs(head->v));
 		}
-		if(head->level>1){
-			printf("x^%d",head->level);
+		if(head->pow>1){
+			printf("x^%d",head->pow);
 		}
-		else if(head->level==1 ){
-			printf("x",abs(head->v));
+		else if(head->pow==1 ){
+			printf("x");
 		}
 	}else{
-		if(head->level==0 &&*tem==0){
-			*tem=0;
+		if(head->pow==0 &&tem==0){
 			printf("%d",0);
-
 		}
 	}
+	return tem;
 }
 void mux(list *a,list *b,list *d){
 	node *ah=a->h;
@@ -140,7 +141,7 @@ void mux(list *a,list *b,list *d){
 		node *ch=c->h;
 		while(ch!=NULL){
 			ch->v*=ah->v;
-			ch->level+=ah->level;
+			ch->pow+=ah->pow;
 			ch=ch->next;
 		}
 		add(c,d,1);
@@ -152,38 +153,31 @@ int main(){
 	int *v=input();
 	list *a=newlist();
 	for(i=0;i<*v;i++){
-		insert(a,*(v+1+i),*v-i-1,0);
+		insert_push(a,*(v+1+i),*v-i-1,0);
 	}
-	int *v1=input();
-	int tem;
+	free(v);
+	v=input();
 	list *b=newlist();
-	for(i=0;i<*v1;i++){
-		insert(b,*(v1+1+i),*v1-i-1,0);
+	for(i=0;i<*v;i++){
+		insert_push(b,*(v+1+i),*v-i-1,0);
 	}
 	list *c=copy(b);
 	list *d=copy(a);
 
+
 	add(a,c,1);
-	p_all(c->h,&tem);
-	free(c);
-	tem=0;
+	p_all(c->h,0);
 	printf("\n");
 
 	c=copy(b);
 	add(c,d,-1);
-	p_all(d->h,&tem);
-	free(c);
-	free(d);
-	tem=0;
+	p_all(d->h,0);
 	printf("\n");
 
 	list *e=newlist();
 	mux(a,b,e);
-	p_all(e->h,&tem);
-	tem=0;
-	free(v);
-	free(v1);
-	free(e);
+	p_all(e->h,0);
+	printf("\n");
 	return 0;
 }
 
