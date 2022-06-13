@@ -54,7 +54,7 @@ char *match(char *a,char *b ){
 	for (int i = 0; i <= max-min; i++){
 		ans[i]=b[i+min];
 	}
-	ans[max]='\0';
+	ans[max+1]='\0';
 	if(max==-1)return "\0";
 	return ans;
 }
@@ -96,34 +96,29 @@ void bfs(node *a[100],int len){
 
 int main(){
 	
-//i BCAEDGHFI
-//p ABCDEFGHI
-//out ABDCEFGIH
 
-	char order=' ';
-	char mid[100]="BCAEDGHFI";
-	char path[100]="ABCDEFGHI";
+	char order[100]="";
+	char mid[100]="";
+	char path[100]="";
 	int type=0;
 
-	scanf("%c",&order);
-	if(order=='I'){
+	scanf("%s",order);
+	if(*order=='I'){
 		scanf("%s",mid);
 	}else {
-		if(order=='O')type=1;
+		if(*order=='O')type=1;
 		scanf("%s",path);
 	}
-	scanf("%c",&order);
-	if(order=='I'){
+	scanf("%s",order);
+	if(*order=='I'){
 		scanf("%s",mid);
 	}else {
-		if(order=='O')type=1;
+		if(*order=='O')type=1;
 		scanf("%s",path);
 	}
-
 
 	node *root=findpre(mid,path,type);
 	bfs(&root,1);
-	//printf("@%c\n",root->v);
 	return 0;
 }
 
