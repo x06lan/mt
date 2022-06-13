@@ -3,6 +3,7 @@ tem*.py
 *.json
 *.txt
 *.exe
+*.out
 1103/
 GetQuestions/
 __pycache__/
