@@ -40,26 +40,26 @@ char *match(char *a,char *b ){
 	int i,j;
 	int max=-1;
 	int min=-1;
+	
 	for(i=0;a[i]!='\0';i++){
 		for(j=0;b[j]!='\0';j++){
 			if(a[i]==b[j]){
-				
 				if(max==-1)min=j;
 				else min=min<j?min:j;
 				max=max>j?max:j;
-				
 			}
 		}
 	}
 	char *ans=malloc(sizeof(char)*100);
-	for (int i = 0; i < max-min; i++){
+	for (int i = 0; i <= max-min; i++){
 		ans[i]=b[i+min];
 	}
 	ans[max]='\0';
+	if(max==-1)return "\0";
 	return ans;
 }
 node *findpre(char *mid,char *pre,int type){
-	if(mid=='\0'||pre=='\0'){
+	if(mid[0]=='\0'||pre[0]=='\0'){
 		return NULL;
 	}
 	node *tem;
@@ -67,27 +67,63 @@ node *findpre(char *mid,char *pre,int type){
 	else tem=newnode(pre[strlen(pre)-1]);
 
 	char l[100]="",r[100]="";
-	find(mid,*pre,l,r);
+	find(mid,tem->v,l,r);
 	char *lpre=match(l,pre);
 	char *rpre=match(r,pre);
+	
 	tem->l=findpre(l,lpre,type);
 	tem->r=findpre(r,rpre,type);
 	return tem;
 }
-
+void bfs(node *a[100],int len){
+    //printf("!%c\n",(a[0])->v);
+    int i;
+    int listlen=0;
+    node *tem[100];
+    for(i=0;i<len;i++){
+        printf("%c",(a[i])->v);
+        if((a[i])->l!=NULL){
+            tem[listlen]=a[i]->l;
+            listlen+=1;
+        }
+        if((a[i])->r!=NULL){
+            tem[listlen]=a[i]->r;
+            listlen+=1;
+        }
+    }
+    if(listlen!=0)bfs(tem,listlen);
+}
 
 int main(){
 	
-//BCAEDGHFI
-//ABCDEFGHI
+//i BCAEDGHFI
+//p ABCDEFGHI
+//out ABDCEFGIH
 
 	char order=' ';
-	scanf("%c",&order);
-	char path[100]="EDGHFI";
-	char path2[100]="ABCDEFGHI";
-	printf("%s\n",match(path,path2));
-	//scanf("%c",path);
+	char mid[100]="BCAEDGHFI";
+	char path[100]="ABCDEFGHI";
+	int type=0;
 
+	scanf("%c",&order);
+	if(order=='I'){
+		scanf("%s",mid);
+	}else {
+		if(order=='O')type=1;
+		scanf("%s",path);
+	}
+	scanf("%c",&order);
+	if(order=='I'){
+		scanf("%s",mid);
+	}else {
+		if(order=='O')type=1;
+		scanf("%s",path);
+	}
+
+
+	node *root=findpre(mid,path,type);
+	bfs(&root,1);
+	//printf("@%c\n",root->v);
 	return 0;
 }
 
