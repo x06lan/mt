@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#define size 100
 typedef struct node_t{
 	char v;
 	struct node_t *r;
@@ -24,14 +25,8 @@ char *find(char *str,char targe,char *l,char *r){
 			flat =1;
 			continue;
 		}
-		if(flat==0){
-			l[ai]=str[i];
-			ai++;
-		}
-		else{
-			r[bi]=str[i];
-			bi++;
-		}
+		if(flat==0)l[ai++]=str[i];
+		else r[bi++]=str[i];
 	}
 	l[ai]='\0';
 	r[bi]='\0';
@@ -50,7 +45,7 @@ char *match(char *a,char *b ){
 			}
 		}
 	}
-	char *ans=malloc(sizeof(char)*100);
+	char *ans=malloc(sizeof(char)*size);
 	for (int i = 0; i <= max-min; i++){
 		ans[i]=b[i+min];
 	}
@@ -66,7 +61,7 @@ node *findpre(char *mid,char *pre,int type){
 	if(type==0)tem=newnode(*pre);
 	else tem=newnode(pre[strlen(pre)-1]);
 
-	char l[100]="",r[100]="";
+	char l[size]="",r[size]="";
 	find(mid,tem->v,l,r);
 	char *lpre=match(l,pre);
 	char *rpre=match(r,pre);
@@ -75,31 +70,24 @@ node *findpre(char *mid,char *pre,int type){
 	tem->r=findpre(r,rpre,type);
 	return tem;
 }
-void bfs(node *a[100],int len){
+void bfs(node *a[size],int len){
     //printf("!%c\n",(a[0])->v);
     int i;
     int listlen=0;
-    node *tem[100];
+    node *tem[size];
     for(i=0;i<len;i++){
         printf("%c",(a[i])->v);
-        if((a[i])->l!=NULL){
-            tem[listlen]=a[i]->l;
-            listlen+=1;
-        }
-        if((a[i])->r!=NULL){
-            tem[listlen]=a[i]->r;
-            listlen+=1;
-        }
+        if((a[i])->l!=NULL)tem[listlen++]=a[i]->l;
+        if((a[i])->r!=NULL)tem[listlen++]=a[i]->r;
     }
     if(listlen!=0)bfs(tem,listlen);
 }
 
 int main(){
 	
-
-	char order[100]="";
-	char mid[100]="";
-	char path[100]="";
+	char order[size]="";
+	char mid[size]="";
+	char path[size]="";
 	int type=0;
 
 	scanf("%s",order);
