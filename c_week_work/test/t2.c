@@ -95,7 +95,21 @@ void add(list *a,list *b){
 		na=na->n;
 	}
 }
-void mux(list *a,list *b){
+list* mux(list *a,list *b){
+	node *na=a->h;
+	list *d=newlist();
+	while(na!=NULL){
+		list *c=copy(b);
+		node*nb=c->h;
+		while(nb!=NULL){
+			nb->level+=na->level;
+			nb->v*=na->v;
+			nb=nb->n;
+		}
+		add(c,d);
+		na=na->n;
+	}
+	return d;
 }
 
 int main() {
@@ -103,7 +117,11 @@ int main() {
 	input(a);
 	list *b=newlist();
 	input(b);
-	add(a,b);
-	print(b->h);
+	list *c=copy(b);
+	add(a,c);
+	print(c->h);
+	printf("\n");
+	c =mux(a,b);
+	print(c->h);
 	return 0;
 }
