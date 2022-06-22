@@ -2,126 +2,112 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-typedef struct node{
-	int v;
-	int level;
-	struct node *n;
-}node;
+#define st(TYPE) char name[100];\
+	int (*perf)(struct TYPE*);\
+	int (*aref)(struct TYPE*);\
+	int are;\
+	int per;
+typedef struct sq{
+	int t;
+	int v1;
+	st(sq)
+}sq;
+typedef struct cc{
+	int t;
+	int v1;
+	st(cc)
+}cc;
+typedef struct re{
+	int t;
+	int v1;
+	int v2;
+	st(re)
+}re;
+typedef struct tr{
+	int t;
+	int v1;
+	int v2;
+	int v3;
+	st(tr)
+}tr;
 
-typedef struct list{
-	node *h;
-	node *l;
-}list;
-node *newnode(int level,int v){
-	node *tem=malloc(sizeof(node));
-	tem->v=v;
-	tem->level=level;
-	return tem;
+void atr(tr *a){
+	scanf("%d",&(a->v1));
+	scanf("%d",&(a->v2));
+	scanf("%d",&(a->v3));
+	int s=a->v1+a->v2+a->v3;
+	s/=2;
+	a->are=sqrt(s*(s-a->v1)*(s-a->v2)*(s-a->v3));
+	a->per=a->v1+a->v2+a->v3;
+	printf("%s %d %d\n","triangle",a->per,a->are);
 }
-list *newlist(){
-	list *a=malloc(sizeof(list));
-	a->h=NULL;
-	a->l=NULL;
-	return a;
+void asq(sq *a){
+	scanf("%d",&(a->v1));
+	a->are=a->v1*a->v1;
+	a->per=4*a->v1;
+	printf("%s %d %d\n","square",a->per,a->are);
 }
-int push(list *a,int level, int v){
-	if(a->h==NULL){
-		a->h=newnode(level,v);
-		a->l=a->h;
-	}
-	else{
-		node *tem=newnode(level,v);
-		a->l->n=tem;
-		a->l=tem;
-	}
-	return 0;
+void acc(cc *a){
+	scanf("%d",&(a->v1));
+	a->are=a->v1*a->v1*4;
+	a->per=a->v1*4*2;
+	printf("%s %d %d\n","circle",a->per,a->are);
 }
-list *copy(list *a){
-	node *head=a->h;	
-	list *tem=newlist();
-	while(head!=NULL){
-		push(tem,head->level,head->v);
-		head=head->n;
-	}
-	return tem;
-}
-void input(list *l){
-	char a[1000];
-	gets(a);
-	int i=0;
-	int sign=1;
-	int v=0;
-	int len=0;
-	int data[1000];
-	for(i=0;a[i]!=0;i++){
-		if(a[i]=='-')sign=-1;
-		if(a[i]-'0'>=0&&a[i]-'0'<10){
-			v*=10;
-			v+=a[i]-'0';
-		}
-		if(a[i]==' '||a[i+1]==0){
-			data[len]=sign*v;
-			sign=1;
-			v=0;
-			len+=1;
-		}
-	}
-	for(i=0;i<len;i++){
-		push(l,i,data[len-i-1]);
-	}
+void are(re *a){
+	scanf("%d",&(a->v1));
+	scanf("%d",&(a->v2));
+	a->are=a->v1*a->v2;
+	a->per=a->v1*2+a->v2*2;
+	printf("%s %d %d\n","rectangle",a->per,a->are);
 }
 
-void print(node *a){
-	if(a!=NULL){
-		print(a->n);
-		if(a->v!=0)printf("%d %d ",a->v,a->level);
-	};
-}
-void add(list *a,list *b){
-	node *na=a->h;
-	list *c=copy(b);
-	while(na!=NULL){
-		node *nb=b->h;
-		int find=0;
-		while(nb!=NULL){
-			if(na->level==nb->level){
-				nb->v+=na->v;
-				find=1;
-				break;
-			}
-			nb=nb->n;
-		}
-		if(find==0)push(b,na->level,na->v);
-		na=na->n;
+
+int *newall(){
+	char t[100]="";
+	int *out=malloc(sizeof(int)*2);
+	scanf("%s",t);
+	if(*t=='t'){
+		tr *tem=malloc(sizeof(tr));
+		atr(tem);
+		*out=tem->are;
+		*(out+1)=tem->per;
+	return out;
+	}
+	else if(*t=='s'){
+		sq *tem=malloc(sizeof(sq));
+		asq(tem);
+		*out=tem->are;
+		*(out+1)=tem->per;
+	return out;
+	}
+	else if(*t=='c'){
+		cc *tem=malloc(sizeof(cc));
+		acc(tem);
+		*out=tem->are;
+		*(out+1)=tem->per;
+	return out;
+	}
+	else if(*t=='r'){
+		re *tem=malloc(sizeof(re));
+		are(tem);
+		*out=tem->are;
+		*(out+1)=tem->per;
+	return out;
 	}
 }
-list* mux(list *a,list *b){
-	node *na=a->h;
-	list *d=newlist();
-	while(na!=NULL){
-		list *c=copy(b);
-		node*nb=c->h;
-		while(nb!=NULL){
-			nb->level+=na->level;
-			nb->v*=na->v;
-			nb=nb->n;
-		}
-		add(c,d);
-		na=na->n;
-	}
-	return d;
-}
+
 
 int main() {
-	list *a=newlist();
-	input(a);
-	list *b=newlist();
-	input(b);
-	list *c=copy(b);
-	add(a,c);
-	print(c->h);
-	printf("\n");
-	c =mux(a,b);
-	print(c->h);
+	int n;
+	int i;
+	scanf("%d",&n);
+	int aarea=0;
+	int aper=0;
+	for(i=0;i<n;i++){
+		int *tem=newall();
+		aarea+=(*tem);
+		aper+=*(tem+1);
+	}
+	printf("%d %d\n",aper,aarea);
 	return 0;
 }
