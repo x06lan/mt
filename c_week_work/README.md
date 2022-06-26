@@ -1,4 +1,5 @@
 # 郭老題目
+[NOOBDY version](https://github.com/NOOBDY/c-homework)
 # 1 一元二次方程式
 
 
