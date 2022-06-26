@@ -2,7 +2,8 @@
 # 1 一元二次方程式
 
 
-:::spoiler
+<details>
+
 ```
 001. 一元二次方程式
 
@@ -54,9 +55,10 @@ Output
 0.0
 0.0
 ```
-:::
+</details>
 # 2 跑壘問題
-:::spoiler
+<details>
+
 ```
 002. 跑壘問題
 
@@ -124,9 +126,10 @@ Output
 1
 0
 ```
-:::
+</details>
 # 3 工資計算
-:::spoiler
+<details>
+
 
 
 ```
@@ -187,9 +190,9 @@ Output
 0.0
 
 ```
-:::
+</details>
 # 4 面積周長
-:::　spoiler
+<details>　
 
 
 ```
@@ -226,9 +229,10 @@ sample Output 2
 
 
 ```
-:::
+</details>
 # 5 衝堂節數
-:::spoiler
+<details>
+
 
 
 ```
@@ -295,9 +299,10 @@ Sample Output 2：
 
 
 ```
-:::
+</details>
 # 6 每月通信
-:::spoiler
+<details>
+
 
 
 ```
@@ -403,9 +408,10 @@ Sample Output 5：
 
 
 ```
-:::
+</details>
 # 7 撲克牌
-:::spoiler
+<details>
+
 
 
 ```
@@ -502,9 +508,10 @@ Sample Output 6：
 0.0
 It's a tie.
 ```
-:::
+</details>
 # 8 圖形
-:::spoiler
+<details>
+
 
 ```
 008
@@ -627,9 +634,10 @@ sample output 6
 
 
 ```
-:::
+</details>
 # 9 葛雷碼
-:::spoiler
+<details>
+
 
 ```
 009
@@ -722,9 +730,10 @@ Sample Output 5
 00000000011001
 000000000000101
 ```
-:::
+</details>
 # 10  數位電路模擬
-:::spoiler
+<details>
+
 
 ```
 010 數位電路模擬
@@ -853,9 +862,10 @@ Sample Output 5：
 
 
 ```
-:::
+</details>
 # 11 數位電路模擬II
-:::spoiler
+<details>
+
 
 
 ```
@@ -985,9 +995,10 @@ Sample Output 5：
 
 
 ```
-:::
+</details>
 # 12 分數四則運算
-:::spoiler
+<details>
+
 
 
 ```
@@ -1509,9 +1520,10 @@ Sample output 9：
 -28(1/2)
 
 ```
-:::
+</details>
 # 13 兩個點，求直線方程式
-:::spoiler
+<details>
+
 
 
 ```
@@ -1652,10 +1664,11 @@ sample output 16：
 y=-3(1/2)x
 
 ```
-:::
+</details>
 
 # 14 1A2B遊戲
-:::spoiler
+<details>
+
 
 
 ```
@@ -1958,10 +1971,11 @@ sample output 20：
 
 
 ```
-:::
+</details>
 
 # 15 大數運算
-:::spoiler
+<details>
+
 
 
 ```
@@ -2142,10 +2156,11 @@ sample output 21：
 
 
 ```
-:::
+</details>
 
 # 16 大數除法
-:::spoiler
+<details>
+
 ```
 016 大數除法
 
@@ -2291,9 +2306,10 @@ sample output 18：
 
 
 ```
-:::
+</details>
 # 17 進位制轉換
-:::spoiler
+<details>
+
 ```
 017 進位制轉換
 
@@ -2404,9 +2420,10 @@ sample output 15：
 
 
 ```
-:::
+</details>
 # 18 分散度
-:::spoiler
+<details>
+
 ```
 018 分散度
 
@@ -2570,9 +2587,10 @@ sample output 20：
 
 
 ```
-:::
+</details>
 # 19 DF-expression
-:::spoiler
+<details>
+
 ```
 019 DF-expression
 
@@ -2805,10 +2823,11 @@ Sample Output 10：
 
 
 ```
-:::
+</details>
 
 # 20 擲骰子遊戲
-:::spoiler
+<details>
+
 
 
 ```
@@ -2948,10 +2967,11 @@ Sample Input 11：
 Sample Output 11：
 8
 ```
-:::
+</details>
 
 # 21 互補字串
-:::spoiler
+<details>
+
 
 
 ```
@@ -3086,9 +3106,10 @@ Sample Output 7:
 =================
 ```
 
-:::
+</details>
 # 22 英文字取代、插入、刪除、分析
-:::spoiler
+<details>
+
 
 ```
 22. 英文字取代、插入、刪除、分析
@@ -3326,9 +3347,10 @@ Vestibulum 1
 
 ---------------------
 ```
-:::
+</details>
 # 23 魔術方塊
-:::spoiler
+<details>
+
 
 
 ```
@@ -3533,9 +3555,10 @@ Sample Output 14：
 1 1 1
 
 ```
-:::
+</details>
 # 24 成績換算
-:::spoiler
+<details>
+
 
 
 ```
@@ -3887,9 +3910,10 @@ AB1001
 AB1002
 75
 ```
-:::
+</details>
 # 25 k-交錯字串
-:::spoiler
+<details>
+
 
 
 ```
@@ -4049,9 +4073,10 @@ XYZ
 Sample Output 11:
 0
 ```
-:::
+</details>
 # 26 計算面積
-:::spoiler
+<details>
+
 ```
 
 026 - 計算面積 (積分)
@@ -4228,9 +4253,10 @@ Sample Output 7:
 52.274082846130
 
 ```
-:::
+</details>
 # 27 專案時程
-:::spoiler
+<details>
+
 
 
 
@@ -4549,10 +4575,11 @@ Sample Output 8:
 26
 
 ```
-:::
+</details>
 
 # 28 棒球遊戲
-:::spoiler
+<details>
+
 
 
 ```
@@ -4717,9 +4744,10 @@ Sample Output 4:
 9 4 3
 
 ```
-:::
+</details>
 # 29 工作排程
-:::spoiler
+<details>
+
 
 ```
 29 - 工作排程
@@ -4897,9 +4925,10 @@ Sample Output 6:
 
 
 ```
-:::
+</details>
 # 30 圖形周長與面積
-:::spoiler
+<details>
+
 
 
 ```
@@ -5032,9 +5061,10 @@ Sample Output 5：
 1923.04 100720.49
 
 ```
-:::
+</details>
 # 31 邏輯電路圖
-:::spoiler
+<details>
+
 
 
 ```
@@ -5176,9 +5206,10 @@ Sample Output 5:
 0,1,0
 
 ```
-:::
+</details>
 # 32 結構排序
-:::spoiler
+<details>
+
 
 ```
 32 - 結構排序
@@ -5312,9 +5343,10 @@ Sample Output 5：
 9 8 6 4 6 1 5 8 4 3
 
 ```
-:::
+</details>
 # 33 交通工具
-:::spoiler
+<details>
+
 
 
 ```
@@ -5515,9 +5547,10 @@ No Transportation
 
 
 ```
-:::
+</details>
 # 34 編修字串
-:::spoiler
+<details>
+
 
 ```
 34 - 編修字串
@@ -5613,9 +5646,10 @@ Sample Output 5:
 You Nautical nonsense be something you wish it
 
 ```
-:::
+</details>
 # 35 長浮點數小數運算
-:::spoiler
+<details>
+
 
 
 ```
@@ -5680,9 +5714,10 @@ Sample Output 4：
 
 
 ```
-:::
+</details>
 # 36 LinkList練習
-:::spoiler
+<details>
+
 
 
 ```
@@ -5819,9 +5854,10 @@ Sample Output 5:
 3 5
 
 ```
-:::
+</details>
 # 37  LinkList多項式
-:::spoiler
+<details>
+
 
 ```
 37 - LinkList多項式
@@ -5960,9 +5996,10 @@ x^3+x^2-x-1
 x^4+2x^3+x^2
 
 ```
-:::
+</details>
 # 38 LinkList實作Stack
-:::spoiler
+<details>
+
 
 
 ```
@@ -6145,9 +6182,10 @@ Sample Output 5：
 
 
 ```
-:::
+</details>
 # 39 LinkList實作Queue
-:::spoiler
+<details>
+
 
 
 ```
@@ -6328,10 +6366,11 @@ Sample Input 5：
 Sample Output 5：
 5
 ```
-:::
+</details>
 # 40 建構唯一二元樹
 
-:::spoiler
+<details>
+
 ```
 40 - 建構唯一二元樹
 *此題須使用Link List實作，否則不予計分。
@@ -6495,9 +6534,10 @@ Sample Output 10：
 ABCDEFGHIJKLMNO
 
 ```
-:::
+</details>
 # 41 城市拜訪
-:::spoiler
+<details>
+
 ```
 41 - 城市拜訪
 
@@ -6598,4 +6638,4 @@ Sample Output 5：
 
 
 ```
-:::
+</details>
