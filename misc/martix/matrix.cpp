@@ -16,9 +16,8 @@ public:
     for (int i = 0; i < mat.size(); i++) {
       printf("[");
       for (int j = 0; j < mat[0].size(); j++) {
-        // std::cout<<this->mat[i][j] <<" ";
         printf("%2.4lf ", this->mat[i][j]);
-        if (j != mat.size() - 1)
+        if (j != this->mat[0].size() - 1)
           printf(",");
       }
       printf("]");
@@ -236,25 +235,44 @@ public:
     Matrix<n, m> out(nmat);
     return out;
   }
-  double det(Matrix mat) {
-    std::vector<std::vector<double>> nmat = mat.mat; // uncertain size array
+  // only 2x2 work
+  double det() {
+    std::vector<std::vector<double>> nmat = this->mat; // uncertain size array
     return nmat[0][0] * nmat[1][1] - nmat[0][1] * nmat[1][0];
   }
-  Matrix eigenValue(Matrix mat) {
-    std::vector<std::vector<double>> nmat = mat.mat;
+  // only 2x2 work
+  Matrix<1, m> eigenValue() {
+    std::vector<std::vector<double>> nmat = this->mat;
 
     // hardcode ax^2+bx+c=0;
     double a = 1;
     double b = -(nmat[0][0] + nmat[1][1]);
-    double c = nmat[0][0] * nmat[1][1] + nmat[0][1] * nmat[1][0];
+    double c = nmat[0][0] * nmat[1][1] - nmat[0][1] * nmat[1][0];
     if (b * b - 4 * a * c < 0)
-      return Matrix({{NAN}, {NAN}});
+      return Matrix<1, m>({{NAN, NAN}});
     double d = pow(b * b - 4 * a * c, 0.5);
+    // printf("%lf %lf %lf %lf \n", a, b, c, d);
     if (fabs(d) < 0.00001)
-      return Matrix({{-b / (2 * a)}, {NAN}});
+      return Matrix<1, m>({{-b / (2 * a), NAN}});
 
-    return Matrix({{(-b + d) / (2 * a)}, {(-b + d) / (2 * a)}});
+    return Matrix<1, m>({{(-b + d) / (2 * a), (-b - d) / (2 * a)}});
   }
-  Matrix eigenVector(Matrix mat) { return Matrix({}); }
+  // only 2x2 work
+  Matrix eigenVector() {
+    Matrix<1, m> eigenValue = this->eigenValue();
+    std::vector<std::vector<double>> s;
+    for (int i = 0; i < eigenValue.getColumn(); i++) {
+      std::vector<std::vector<double>> nmat = this->mat;
+      for (int j = 0; j < n; j++) {
+        nmat[j][j] -= eigenValue.mat[0][i];
+      }
+      Matrix ss(nmat);
+      ss = ss.rref();
+      s.push_back({});
+      s[i].push_back(ss.mat[0][1]);
+      s[i].push_back(ss.mat[0][0]);
+    }
+    return Matrix(s);
+  }
 };
 #endif
