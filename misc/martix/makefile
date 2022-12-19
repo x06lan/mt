@@ -2,5 +2,6 @@
 all: matrix
 
 matrix:matrix.cpp
-	g++ matrix.cpp  -o a.out
+	g++ matrix.cpp hw2.cpp -o matrix.o
+	./matrix.o
 
