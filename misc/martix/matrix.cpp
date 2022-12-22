@@ -251,7 +251,6 @@ public:
     if (b * b - 4 * a * c < 0)
       return Matrix<1, m>({{NAN, NAN}});
     double d = pow(b * b - 4 * a * c, 0.5);
-    // printf("%lf %lf %lf %lf \n", a, b, c, d);
     if (fabs(d) < 0.00001)
       return Matrix<1, m>({{-b / (2 * a), NAN}});
 
@@ -269,10 +268,17 @@ public:
       Matrix ss(nmat);
       ss = ss.rref();
       s.push_back({});
-      s[i].push_back(ss.mat[0][1]);
-      s[i].push_back(ss.mat[0][0]);
+	  //rref may not sort by pivot columns
+	  if(ss.mat[0][1]!=0.0){
+		  s[i].push_back(ss.mat[0][1]);
+		  s[i].push_back(ss.mat[0][0]);
+		}
+	  else{
+		  s[i].push_back(ss.mat[1][1]);
+		  s[i].push_back(ss.mat[1][0]);
+		}
     }
-    return Matrix(s);
+    return Matrix(s).transpose();
   }
 };
 #endif

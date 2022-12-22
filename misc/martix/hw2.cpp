@@ -16,11 +16,9 @@ int main() {
   printf("A:\n");
   printf("zero vector cant be eigenVector by definetion\n");
   printf("eigenValue λ1 is\n");
-  printf("[%.4lf ]\n", A.eigenValue().mat[0][0]);
-  // A.eigenValue()[0].print();
+  A.eigenValue()[0].print();
   printf("eigenVector for λ1 is\n");
-  A.eigenVector()[0].print();
-  // A.eigenVector().print();
+  A.eigenVector().print();
   printf("\n");
 
   printf("B:\n");
@@ -48,8 +46,10 @@ int main() {
   printf("λ1==λ2\n");
   printf("eigenValue λ1 is\n");
   printf("[%.4lf ]\n", W.eigenValue().mat[0][0]);
+  //W.eigenValue().print();
   printf("eigenVector for λ1 is\n");
   W.eigenVector()[0].print();
+  //W.eigenVector().print();
   printf("\n");
 
   printf("X:\n");
@@ -63,10 +63,12 @@ int main() {
   printf(
       "zero vector cant be eigenVector by definetion\nso not have eigenValue "
       "and eigenVector");
-  // printf("eigenValue is\n");
-  // Z.eigenValue().print();
-  // printf("eigenVector is\n");
-  // Z.eigenVector()[0].print();
   printf("\n");
+	//printf("T:\n");
+	//printf("eigenValue λ1,λ2 is\n");
+	//T.eigenValue().print();
+	//printf("eigenVector for λ1,λ2 is\n");
+	//T.eigenVector().print();
+	//printf("\n");
   return 0;
 }
