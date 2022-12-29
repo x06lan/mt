@@ -278,7 +278,7 @@ public:
 		  s[i].push_back(ss.mat[1][0]);
 		}
     }
-    return Matrix(s).transpose();
+    return Matrix(s);
   }
 };
 #endif

@@ -32,7 +32,8 @@ int main() {
   printf("eigenValue λ1,λ2 is\n");
   C.eigenValue().print();
   printf("eigenVector for λ1,λ2 is\n");
-  C.eigenVector().print();
+  C.eigenVector()[0].print();
+  printf("[All nonzero vectors]\n");
   printf("\n");
 
   printf("V:\n");
@@ -56,13 +57,14 @@ int main() {
   printf("eigenValue λ1,λ2 is\n");
   X.eigenValue().print();
   printf("eigenVector for λ1,λ2 is\n");
-  B.eigenVector().print();
+  X.eigenVector().print();
   printf("\n");
 
   printf("Z:\n");
-  printf(
-      "zero vector cant be eigenVector by definetion\nso not have eigenValue "
-      "and eigenVector");
+  printf("eigenValue λ1 is\n");
+  printf("[%.4lf ]\n", Z.eigenValue().mat[0][0]);
+  printf("eigenVector λ1\n");
+  printf("All nonzero vectors\n");
   printf("\n");
 	//printf("T:\n");
 	//printf("eigenValue λ1,λ2 is\n");
